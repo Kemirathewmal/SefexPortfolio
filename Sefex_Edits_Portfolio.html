@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sefex Edits | Car Montage Video Editing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border-bottom: 2px solid #bf5600;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .header-logo {
+            flex-shrink: 0;
+        }
+
+        .header-logo img {
+            height: 80px;
+            width: 80px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        .header-content {
+            text-align: center;
+            flex: 1;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #bf5600;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #fff;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #bf5600;
+        }
+
+        .bio-section {
+            background: #151515;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #bf5600;
+            margin-bottom: 3rem;
+        }
+
+        .bio-section p {
+            font-size: 1.1rem;
+            color: #d0d0d0;
+            line-height: 1.8;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .video-card {
+            background: #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #2a2a2a;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            border-color: #bf5600;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: #0a0a0a;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .contact-section {
+            background: #151515;
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            border: 1px solid #2a2a2a;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 2rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #bf5600;
+            color: #fff;
+            border-color: #bf5600;
+        }
+
+        .btn-primary:hover {
+            background: #a84700;
+            border-color: #a84700;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #bf5600;
+            border-color: #bf5600;
+        }
+
+        .btn-secondary:hover {
+            background: #bf5600;
+            color: #fff;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .info-item a {
+            color: #bf5600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-item a:hover {
+            color: #ff7a33;
+        }
+
+        footer {
+            background: #0f0f0f;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid #2a2a2a;
+            color: #808080;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .header-logo img {
+                height: 60px;
+                width: 60px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="Sefex_Edits-_Official_logo.png" alt="Sefex Edits Logo">
+        </div>
+        <div class="header-content">
+            <h1>SEFEX EDITS</h1>
+            <p>Fast-Paced Cinematic Car Montages</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section>
+            <div class="bio-section">
+                <p>I turn raw car footage into eye-catching car montages. Fast-paced cinematic cuts with professional color grading — every frame designed to capture that high-octane energy.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Portfolio</h2>
+            <div class="gallery">
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/xZonD7GRbK8" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/DY3Y1rs8qr8" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/3_y_z2uoVi8" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/dE2wsovkUXw" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/ZRH3s4P6Ao0" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/prMDKCsmOPY" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/q2bC4174ocw" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="contact-section">
+                <h2>Ready to Work Together?</h2>
+                <p style="margin-bottom: 2rem; color: #c0c0c0;">Let's create something stunning for your project.</p>
+                
+                <div class="contact-buttons">
+                    <a href="https://www.fiverr.com/s/od8rrzA" class="btn btn-primary" target="_blank">Hire on Fiverr</a>
+                    <a href="mailto:kemirathewmal@gmail.com" class="btn btn-secondary">Email Me</a>
+                    <a href="https://instagram.com/kemirapeiris" class="btn btn-secondary" target="_blank">Instagram</a>
+                </div>
+
+                <div class="contact-info">
+                    <div class="info-item">
+                        <span>📧</span>
+                        <a href="mailto:kemirathewmal@gmail.com">kemirathewmal@gmail.com</a>
+                    </div>
+                    <div class="info-item">
+                        <span>📷</span>
+                        <a href="https://instagram.com/kemirapeiris" target="_blank">@kemirapeiris</a>
+                    </div>
+                    <div class="info-item">
+                        <span>💼</span>
+                        <a href="https://www.fiverr.com/s/od8rrzA" target="_blank">Fiverr Profile</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sefex Edits. All rights reserved. Fast-paced cinematic car montages.</p>
+    </footer>
+</body>
+</html>
